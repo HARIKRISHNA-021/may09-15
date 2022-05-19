@@ -1,30 +1,26 @@
 import java.util.Scanner;
 
-public class product_of_num {
+public class ProducteOfDigites {
+    public static void main(String[] args) {
+        String s="as13r52eau2";
+       int product= findProdute(s);
+       System.out.println(product);
+    }
 
-	public product_of_num() {
-		// TODO Auto-generated constructor stub
-	}
+    private static int findProdute(String s) {
+        int p=1;
+        for(int i=0;i<s.length();i++){
+            Character c=s.charAt(i);
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner sc =new Scanner(System.in);
-		String s=sc.next();
-		int a=1;
-		s=s.replaceAll("[^1-9]", "");
-		int f=Integer.parseInt(s);
-		System.out.println(s);
-		int ar[]=new int[s.length()];
-		for(int i=0;i<s.length();i++) {
-			ar[i]=s.charAt(i);
-			}
-		for(int i=0;i<s.length();i++) {
-			a=a*ar[i];
+            if(c.isDigit(c)){
+               int j=Integer.valueOf(c);
 
-			}
-		System.out.println(a);
-	
-		}
-  
+                p=p*j;
+                //System.out.println(p);
+
+            }
+        }
+        //System.out.println(p);
+        return p;
+    }
 }
-
